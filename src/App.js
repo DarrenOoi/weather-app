@@ -11,7 +11,7 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
-  const [search, setSearch] = useState(["Australia"]);
+  const [search, setSearch] = useState(["Brisbane"]);
   //const def = ["London"];
   function Type() {
     return (
@@ -41,65 +41,27 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header>
-        <h1 className="Wtitle">{search} Weather Today</h1>
-      </header>
-      <br></br>
-      <Type />
-      <section className="main">
-        {search ? (
-          <div id="weather">
-            <p className="subtitle">
-              {/* undefined when search = [ ] */}
-              Weather: {headlines.text}
-              <br></br>
-              {/* {headlines.icon} */}
-              Last Updated: {headlines.time}
-              <br></br>
-              Temperature: {headlines.temp}°C
-              <br></br>
-              Wind Speed: {headlines.wind}km/h
-              <br></br>
-              <br></br>
-              {headlines.forecast1}
-              <br></br>
-              Temperature: {headlines.forecast1temp}
-              <br></br>
-              Weather: {headlines.forecast1text}
-              <br></br>
-              <br></br>
-              {headlines.forecast2}
-              <br></br>
-              Temperature: {headlines.forecast2temp}
-              <br></br>
-              Weather: {headlines.forecast2text}
-              <br></br>
-              <br></br>
-              {headlines.forecast3}
-              <br></br>
-              Temperature: {headlines.forecast3temp}
-              <br></br>
-              Weather: {headlines.forecast3text}
-            </p>
-          </div>
-        ) : (
-          <div></div>
-        )}
-        {/* {search ? (
-   <div>
-      <p>
-        Weather: {headlines.text}
+    // <div className="App">
+    //<title> Weather Today</title>
+    <div class="App">
+      <head>
+        <h1> Weather Today</h1>
         <br></br>
-        Last Updated: {headlines.time}
-        <br></br>
-        Temperature: {headlines.temp}°C
-        <br></br>
-        Wind Speed: {headlines.wind}km/h
-      </p>
-      </div>
- ): */}
-      </section>
+        <Type />
+      </head>
+      <body>
+        <div class="weather">
+          <Type />
+          <br></br>
+          <h2 class="city">Weather in {search}</h2>
+          <h1 class="temp">{headlines.temp}°C</h1>
+          <img src="" alt="" class="icon" />
+          <div class="time">{headlines.time}</div>
+          <div class="description">{headlines.text}</div>
+          <div class="humidity">Humidity: 60%</div>
+          <div class="wind">Wind speed: {headlines.wind}km/h</div>
+        </div>
+      </body>
     </div>
   );
 }
