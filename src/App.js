@@ -36,9 +36,9 @@ function App() {
     return <p>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Something went wrong: {error.message}</p>;
-  }
+  // if (error) {
+  //   return <p>Something went wrong: {error.message}</p>;
+  // }
 
   return (
     // <div className="App">
@@ -47,7 +47,6 @@ function App() {
       <head>
         <h1> Weather Today</h1>
         <br></br>
-        <Type />
       </head>
       <body>
         <div class="weather">
@@ -55,10 +54,10 @@ function App() {
           <br></br>
           <h2 class="city">Weather in {search}</h2>
           <h1 class="temp">{headlines.temp}°C</h1>
-          <img src="" alt="" class="icon" />
+          <img src={headlines.icon} alt="" class="icon" />
           <div class="time">{headlines.time}</div>
           <div class="description">{headlines.text}</div>
-          <div class="humidity">Humidity: 60%</div>
+          <div class="humidity">Humidity: {headlines.humidity}%</div>
           <div class="wind">Wind speed: {headlines.wind}km/h</div>
         </div>
       </body>

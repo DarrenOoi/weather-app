@@ -40,15 +40,8 @@ function getForecastByQuery(query) {
         icon: res.current.condition.icon,
         temp: res.current.temp_c,
         wind: res.current.wind_kph,
-        forecast1: res.forecast.forecastday[0].hour[0].time,
-        forecast1temp: res.forecast.forecastday[0].hour[0].temp_c,
-        forecast1text: res.forecast.forecastday[0].hour[0].condition.text,
-        forecast2: res.forecast.forecastday[0].hour[12].time,
-        forecast2temp: res.forecast.forecastday[0].hour[12].temp_c,
-        forecast2text: res.forecast.forecastday[0].hour[12].condition.text,
-        forecast3: res.forecast.forecastday[0].hour[23].time,
-        forecast3temp: res.forecast.forecastday[0].hour[23].temp_c,
-        forecast3text: res.forecast.forecastday[0].hour[23].condition.text,
+        humidity: res.current.humidity,
+        city: res.location.name,
       };
     });
 }
@@ -62,6 +55,16 @@ export function useWeather(QUERY) {
     getForecastByQuery(QUERY)
       .then((headlines) => {
         setHeadlines(headlines);
+        // document.body.style.backgroundImage =
+        //   "url('https://source.unsplash.com/random/1600×900/?" +
+        //   headlines.city +
+        //   "," +
+        //   headlines.text +
+        //   "')";
+        document.body.style.backgroundImage =
+          "url('https://source.unsplash.com/random/1600×900/?" +
+          headlines.city +
+          "')";
         //console.log(headlines);
       })
       .catch((e) => {
