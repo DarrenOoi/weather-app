@@ -65,6 +65,8 @@ export function useWeather(QUERY) {
           "url('https://source.unsplash.com/random/1600×900/?" +
           headlines.city +
           "')";
+        document.body.style.backgroundSize = "cover";
+
         //console.log(headlines);
       })
       .catch((e) => {

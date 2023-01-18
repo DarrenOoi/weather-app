@@ -48,19 +48,17 @@ function App() {
         <h1> Weather Today</h1>
         <br></br>
       </head>
-      <body>
-        <div class="weather">
-          <Type />
-          <br></br>
-          <h2 class="city">Weather in {search}</h2>
-          <h1 class="temp">{headlines.temp}°C</h1>
-          <img src={headlines.icon} alt="" class="icon" />
-          <div class="time">{headlines.time}</div>
-          <div class="description">{headlines.text}</div>
-          <div class="humidity">Humidity: {headlines.humidity}%</div>
-          <div class="wind">Wind speed: {headlines.wind}km/h</div>
-        </div>
-      </body>
+      <div class="weather">
+        <Type />
+        <br></br>
+        <h2 class="city">Weather in {search}</h2>
+        <h1 class="temp">{headlines.temp}°C</h1>
+        <img src={headlines.icon} alt="" class="icon" />
+        <div class="time">{headlines.time}</div>
+        <div class="description">{headlines.text}</div>
+        <div class="humidity">Humidity: {headlines.humidity}%</div>
+        <div class="wind">Wind speed: {headlines.wind}km/h</div>
+      </div>
     </div>
   );
 }
