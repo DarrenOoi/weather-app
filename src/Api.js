@@ -25,6 +25,16 @@ export const countries = [
   "Townsville",
 ];
 
+export const geoApiOptions = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "0b43ae5043mshff4fa2eb241971ep14cd36jsn5cfc0f397e87",
+    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+  },
+};
+
+export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
+
 function getForecastByQuery(query) {
   //const url = `${API_URL}/v1/current.json?key=${API_KEY}&q=${query}&aqi=no`;
   const url = `${API_URL}/v1/forecast.json?key=${API_KEY}&q=${query}&days=1&aqi=no&alerts=no`;
@@ -34,6 +44,9 @@ function getForecastByQuery(query) {
   return fetch(url)
     .then((res) => res.json())
     .then((res) => {
+      document.body.style.backgroundImage =
+        "url('https://source.unsplash.com/random/?" + query + "')";
+      document.body.style.backgroundSize = "cover";
       return {
         time: res.current.last_updated,
         text: res.current.condition.text,
@@ -61,12 +74,6 @@ export function useWeather(QUERY) {
         //   "," +
         //   headlines.text +
         //   "')";
-        document.body.style.backgroundImage =
-          "url('https://source.unsplash.com/random/1600×900/?" +
-          headlines.city +
-          "')";
-        document.body.style.backgroundSize = "cover";
-
         //console.log(headlines);
       })
       .catch((e) => {

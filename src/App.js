@@ -9,9 +9,13 @@ import "./App.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 //applies bootstrap css
 import "bootstrap/dist/css/bootstrap.css";
+import Searchbar from "./components/search";
 
 function App() {
-  const [search, setSearch] = useState(["Brisbane"]);
+  const [search, setSearch] = useState(["London"]);
+  const handleSearchChange = (search) => {
+    setSearch(search.label);
+  };
   //const def = ["London"];
   function Type() {
     return (
@@ -36,9 +40,9 @@ function App() {
     return <p>Loading...</p>;
   }
 
-  // if (error) {
-  //   return <p>Something went wrong: {error.message}</p>;
-  // }
+  if (error) {
+    return <p>Something went wrong: {error.message}</p>;
+  }
 
   return (
     // <div className="App">
@@ -48,8 +52,11 @@ function App() {
         <h1> Weather Today</h1>
         <br></br>
       </head>
+
       <div class="weather">
-        <Type />
+        <div className="search">
+          <Searchbar SearchChange={handleSearchChange} />
+        </div>
         <br></br>
         <h2 class="city">Weather in {search}</h2>
         <h1 class="temp">{headlines.temp}°C</h1>

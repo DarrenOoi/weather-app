@@ -7,6 +7,11 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.search {
+  max-width: 1080px;
+  margin: 20px auto;
+}
+
 .weather {
   background: #eaeaea;
   padding: 2em;
