@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { API_KEY } from "./components/apikey";
 
 // UPDATE ME WITH API KEY
-const API_KEY = "d804dc49e15e407196b152253221103";
 //const QUERY = "Brisbane";
 const API_URL = "http://api.weatherapi.com";
 
@@ -24,14 +24,6 @@ export const countries = [
   "Cairns",
   "Townsville",
 ];
-
-export const geoApiOptions = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "0b43ae5043mshff4fa2eb241971ep14cd36jsn5cfc0f397e87",
-    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
-  },
-};
 
 export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 

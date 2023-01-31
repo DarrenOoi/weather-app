@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_API_URL, geoApiOptions } from "../Api";
+import { GEO_API_URL } from "../Api";
+import { geoApiOptions } from "./apikey";
 
 const Searchbar = ({ SearchChange }) => {
   const loadOptions = (inputValue) => {
